@@ -1,0 +1,142 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 3px;
+    background-image: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+}
+
+.outer_box {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+h2 {
+    color: blue;
+    font-family: verdana;
+    font-size: 3rem;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    /* margin: 10px; */
+    background-color: rgb(255, 255, 255);
+}
+
+.contact>div {
+    background-color: #ffffff;
+    /* margin: 10px; */
+    background-color: #f1f1f1;
+    flex-basis: 100%;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+.header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+
+/* Clear floats after the header */
+
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flex_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: DodgerBlue;
+}
+
+.flex_container>div {
+    background-color: #f1f1f1;
+    margin: 1.5vw;
+    padding: 0.4vw;
+    font-size: 2.0vw;
+}
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.addBtn {
+    padding: 10px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    background-color: rgb(243, 243, 243);
+    color: rgb(0, 0, 0);
+}
+
+.addBtn:hover {
+    color: rgb(243, 243, 243);
+    background-color: rgb(0, 0, 0);
+}
+
+
+/* limiting the number of characters in date section */
+
+
+/* .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    number of lines to show
+    -webkit-box-orient: vertical;
+} */
+
+
+/* .contact {
+    width: 100%;
+    height: 60%;
+    min-height: 300px;
+    border: var(--border-width) solid var(--light-grey);
+    border-radius: var(--border-radius);
+    background-color: var(--light-grey);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.button {
+    width: 25%;
+    height: 20%;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-width) solid var(--light-grey);
+    background-color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.button:hover {
+    background-color: var(--orange);
+}
+
+.red {
+    background-color: var(--red);
+    color: white;
+} */
