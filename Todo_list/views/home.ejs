@@ -1,0 +1,97 @@
+<!-- Innovative things : 1) Added a animation of typing like text with help of cursor above the Add Task Description (Typing and Deleting Effect with Javascript)-->
+<!-- Innovative things : 2) Added an Hourglass Animation In front of inputting a date -->
+<html>
+
+<head>
+    <script src="https://kit.fontawesome.com/94154b59ec.js" crossorigin="anonymous"></script>
+    <title>
+        <%= locals.title%>
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script type="text/javascript" src="/js/home.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- The outer div contains all the elements of the ToDo LIst -->
+    <div class="outer_box">
+        <div id="myDIV" class="header">
+            <h2 style="margin:9px">My To Do List</h2>
+        </div>
+        <!-- the below flex container consists of the 1)description 2)Category 3)Date 4)Add button -->
+        <div class="flex_container">
+            <form action="/create-list" method="POST" class="flex_container">
+                <div class="nav-bar" id="desc">
+                    <div id="text"></div>
+                    <div id="cursor"></div>
+                    <br>
+                    <br>
+                    <input type="text" id="container" name="description" placeholder="Enter Task Description !!" required>
+                </div>
+                <!-- The inner flexbox consists of the CAtegory and Date -->
+                <div class="flex_container2 width">
+                    <div class="nav-bar" id="category">
+                        <label for="Select">SELECT Category</label>
+                        <br>
+                        <br>
+                        <!-- We have created a drop down menu to choose a label/category -->
+                        <select id="category" name="category" placeholder="Enter category" required>
+                                    <option value="Personal Work">Personal Work</option>
+                                    <option value="Work">Work</option>
+                                    <option value="School">School</option>
+                                    <option value="Cleaning">Cleaning</option>
+                                    <option value="Other">Other</option>
+                                </select>
+
+                    </div>
+                    <div class="nav-bar" id="date">
+                        <!-- The input here is taken using a calender type format so that it is easy for the user to give input -->
+                        <label for="Due_date">Due date: <div id="div1" class="fa"></div></label>
+                        <br>
+                        <br>
+                        <input type="date" id="due_date" name="due_date">
+                    </div>
+                </div>
+                <div class="nav-bar" id="submit_prop">
+                    <!-- This submit button is used to add the required details to the database -->
+                    <button type="submit" class="addBtn">Add Task <br><i class="fas fa-plus" style = "color : green"></i></button>
+                </div>
+            </form>
+        </div>
+        <div style="padding : 10px; background-color : #F2D670;">
+            <!-- Here I have made a table to store the headings as well as the ToDo List -->
+            <table id="todo" style="text-align: center;">
+                <tr>
+                    <th id="headers" style="text-align : center">Task specification</th>
+                    <th id="headers" style="text-align : center">Category</th>
+                    <th id="headers" style="text-align : center">Deadline</th>
+                    <th id="headers" style="text-align : center">Delete Task</th>
+                </tr>
+                <!-- This for loop is used to display -->
+                <% for (let i of todo_list) { %>
+                    <tr>
+                        <td>
+                            <%= i.description %>
+                        </td>
+                        <td>
+                            <%= i.category %>
+                        </td>
+                        <td>
+                            <%= i.due_date %>
+                        </td>
+                        <td>
+                            <!-- Here I am fetching the required _id to be deleted so that I can delete this task from the database too -->
+                            <a href="/delete-contact/?id=<%= i._id %>">
+                                <!-- <i class="fas fa-trash-alt" style="font-size:20px"></i> -->
+                                <i class="fas fa-trash-alt" style="font-size:20px; color : red"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
+    <script type=" text/javascript " src="/js/home.js "></script>
+</body>
+
+</html>
